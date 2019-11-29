@@ -3,7 +3,6 @@
 ;;;---------------------------------------------------------
 (in-package :Opusmodus)
 
-#|
 ;; Install the Quicklisp beta library manager.
 ;(load "http://beta.quicklisp.org/quicklisp.lisp")
 
@@ -21,6 +20,14 @@
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
 
+;; slime backend
+(ql:quickload "quicklisp-slime-helper" :verbose nil)
+(cl-user::start-swank)
+
+;; osc tools
+(ql:quickload "osc" :verbose nil)
+(ql:quickload "sc-osc" :verbose nil)
+
 ;; To load a system, use:
 ;(ql:quickload "scheduler")
 
@@ -32,4 +39,3 @@
 
 ;;; Libraries:
 ;(ql:quickload "scheduler")
-|#
